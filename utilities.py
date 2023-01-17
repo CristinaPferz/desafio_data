@@ -161,6 +161,8 @@ def carga_datos_expertos(database):
     df['studies'] = df['studies'].apply(lambda x: re.sub(' ', '', x))
 
     # Unir varias columnas en una sola nueva con las palabras que me interesan para el modelo
+    
+    ########### OJO ############# AQUÍ VA MI MODIFICACIÓN
     if (df["support_type"].unique()[0] == 'Orientacion sobre temas legales'):
         df['all_about_me'] = df['area'] + ', ' + df['year_birth'] + ', ' + df['years_in'] + ', ' + df['working']
         
